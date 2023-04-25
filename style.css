@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Roboto:wght@500&display=swap");
 
-
-
 /* Ресет */
 * {
   box-sizing: border-box;
@@ -13,9 +11,13 @@
 }
 
 img {
-    display: block;
-    max-width: 100%;
-    height: auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: black;
 }
 
 /* Хедер */
@@ -23,7 +25,6 @@ header {
   display: flex;
   margin-left: 80px;
 }
-
 
 span {
   margin-left: 23px;
@@ -39,7 +40,29 @@ span {
 /* Логотип */
 .logo {
   margin-top: 35px;
+  animation: bring 2s linear;
 }
+
+@keyframes bring {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  40% {
+    transform: rotateZ(10deg);
+  }
+
+  60% {
+    transform: rotateZ(10deg);
+  }
+
+  100% {
+    transform: rotateZ(-360deg);
+  }
+}
+
+
+
 span {
   margin-left: 23px;
   font-family: "Montserrat";
@@ -71,7 +94,20 @@ span {
 .cart {
   margin-top: 35px;
   margin-left: 78px;
+  animation: move-cart .5s linear;
 }
+
+@keyframes move-cart {
+  0% {
+    margin-left: 20px;
+  }
+
+  100% {
+    margin-left: 78px;
+  }
+}
+
+
 
 /* Main section */
 main {
@@ -82,6 +118,7 @@ main {
     rgba(213, 205, 224, 1) 43%,
     rgba(228, 188, 203, 1) 71%
   );
+  margin-top: 65px;
 }
 
 .main {
@@ -108,7 +145,7 @@ main {
   color: #444444;
   width: 656px;
   height: 170px;
-  padding-top: 23px;
+  margin-top: 23px;
 }
 
 .main p {
@@ -121,36 +158,77 @@ main {
   padding-top: 23px;
 }
 
-
-
-
 /* Кнопка купити */
 .btn-buy {
-    margin-left: 82px;
-    margin-top: 23px;
-        width: 230px;
-        height: 50px;
-        background: #ffffff;
-        box-shadow: 0px 7px 20px rgba(121, 188, 207, 0.4);
-        border-radius: 100px;
-        cursor: pointer;
-        font-weight: 700;
-        font-size: 18px;
-        line-height: 22px;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-        color: #79bccf;
+  margin-left: 82px;
+  margin-top: 23px;
+  width: 230px;
+  height: 50px;
+  background: #ffffff;
+  box-shadow: 0px 7px 20px rgba(121, 188, 207, 0.4);
+  border-radius: 100px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #79bccf;
+}
+
+
+
+.btn-buy:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(27, 27, 27, .5);
+}
+
+.btn-buy:active {
+  transform: translateY(-3px);
+}
+
+.btn-buy:hover {
+  background-color: rgb(0, 238, 255);
 }
 
 /* Соц-мережі */
 .soc__list {
-    display: flex;
-    gap: 36px;
-    margin-left: 91px;
-    margin-top: 100px;
+  display: flex;
+  gap: 36px;
+  margin-left: 91px;
+}
+
+/* Каталог */
+
+.catalog {
+  float: right;
+  margin-right: 250px;
 }
 
 
-.soc__list img {
-    
+@media (max-width:425px) {
+
+  main {
+      background: rgb(197, 224, 247);
+      background: linear-gradient(90deg,
+          rgba(197, 224, 247, 1) 24%,
+          rgba(213, 205, 224, 1) 43%,
+          rgba(228, 188, 203, 1) 71%);
+      margin-top: 65px;
+      width:425px;
+
+    }
+        .main h2 {
+          font-family: "Roboto";
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 28px;
+          letter-spacing: 0.27em;
+          text-transform: uppercase;
+          color: #ffffff;
+          /* padding-top: 165px; */
+        }
+        .main {
+          margin-left: 40px;
+        }
 }
